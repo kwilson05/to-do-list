@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f_f)p7u0g(r83ee_f9(=c4l*tv=zn438f4539znto802z_l#o+'
+SECRET_KEY = 'django-insecure-6twfmiokkccj(itxvw+uiy2_x$4$_ad73k)1dxf#870mc+1^%$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -75,12 +75,8 @@ WSGI_APPLICATION = 'todoList.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', "todoList"),
-        'USER': os.environ.get('DB_USER', "root"),
-        'PASSWORD': os.environ.get('DB_PASSWORD', "password"),
-        'HOST': os.environ.get('DB_HOST', "db"),
-        'PORT': os.environ.get('DB_PORT', "3306")
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
